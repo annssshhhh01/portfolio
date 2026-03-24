@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5C6B3C"/>
+      <stop offset="100%" stop-color="#3A4528"/>
+    </linearGradient>
+    <linearGradient id="piece" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D8D8D8"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- macOS rounded squircle background -->
+  <rect x="2" y="2" width="116" height="116" rx="26" ry="26" fill="url(#bg)"/>
+  <rect x="2.5" y="2.5" width="115" height="115" rx="25.5" ry="25.5" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  
+  <!-- Chessboard pattern (4x4 in the bottom area, subtle) -->
+  <g opacity="0.12">
+    <rect x="14" y="75" width="11.5" height="11.5" fill="#fff"/>
+    <rect x="37" y="75" width="11.5" height="11.5" fill="#fff"/>
+    <rect x="60" y="75" width="11.5" height="11.5" fill="#fff"/>
+    <rect x="83" y="75" width="11.5" height="11.5" fill="#fff"/>
+    <rect x="25.5" y="86.5" width="11.5" height="11.5" fill="#fff"/>
+    <rect x="48.5" y="86.5" width="11.5" height="11.5" fill="#fff"/>
+    <rect x="71.5" y="86.5" width="11.5" height="11.5" fill="#fff"/>
+    <rect x="94.5" y="86.5" width="11.5" height="11.5" fill="#fff"/>
+  </g>
+  
+  <!-- Chess Knight piece (simplified, elegant) -->
+  <g filter="url(#shadow)" transform="translate(60,48)">
+    <!-- Base -->
+    <rect x="-20" y="22" width="40" height="6" rx="2" fill="url(#piece)"/>
+    <rect x="-16" y="18" width="32" height="6" rx="1.5" fill="url(#piece)"/>
+    
+    <!-- Knight body -->
+    <path d="M-10,18 L-12,4 C-13,-4 -8,-14 -2,-20 C0,-22 4,-24 6,-24 C10,-24 12,-20 12,-16 C12,-12 10,-10 8,-8 L14,-8 C14,-8 16,-6 14,-4 L10,0 C10,0 12,4 12,10 L12,18 Z" fill="url(#piece)"/>
+    
+    <!-- Knight eye -->
+    <circle cx="2" cy="-14" r="1.8" fill="#3A4528"/>
+    
+    <!-- Knight nostril -->
+    <circle cx="-6" cy="-8" r="1" fill="#3A4528" opacity="0.5"/>
+    
+    <!-- Mane detail -->
+    <path d="M8,-16 C6,-18 4,-20 6,-24" fill="none" stroke="#B8B8B8" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+</svg>

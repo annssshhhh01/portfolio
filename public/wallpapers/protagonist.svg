@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <rect width="100%" height="100%" fill="#040202" />
+  
+  <g transform="translate(800, 450)">
+    <!-- PROTAGONIST taking up full width and stretched vertically -->
+    <text 
+      font-family="Impact, Arial Black, sans-serif" 
+      font-size="320" 
+      fill="#8B2524" 
+      text-anchor="middle"
+      dominant-baseline="central"
+      transform="scale(1, 1.8)"
+      textLength="1500"
+      lengthAdjust="spacingAndGlyphs"
+    >
+      PROTAGONIST
+    </text>
+
+    <!-- SYNDROME perfectly centered on top, small and tracked out -->
+    <text 
+      font-family="'Montserrat', 'Arial', sans-serif" 
+      font-size="38" 
+      font-weight="900" 
+      fill="#FFFFFF" 
+      text-anchor="middle"
+      dominant-baseline="central"
+      letter-spacing="46"
+      dy="5"
+    >
+      SYNDROME
+    </text>
+  </g>
+</svg>
