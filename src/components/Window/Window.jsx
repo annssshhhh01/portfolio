@@ -194,18 +194,21 @@ export function Window({
           onMinimize={handleMinimize}
           onMaximize={handleMaximize}
         />
-        <h2 className="absolute left-1/2 -translate-x-1/2 text-sm font-medium text-white/80 pointer-events-none">
+        <h2 className="absolute left-1/2 -translate-x-1/2 text-sm font-medium text-white/80 pointer-events-none max-w-[45%] truncate">
           {title}
         </h2>
         {fullScreen && (
-          <span className="text-[10px] text-white/40 bg-white/5 px-2 py-0.5 rounded border border-white/10 font-medium tracking-wide select-none">
-            ESC to close
+          <span className="text-[10px] text-white/40 bg-white/5 px-2 py-0.5 rounded border border-white/10 font-medium tracking-wide select-none whitespace-nowrap">
+            {isMobile ? "Tap ✕ to close" : "ESC to close"}
           </span>
         )}
         {!fullScreen && <div className="w-16" />}
       </div>
 
-      <div className="flex-1 overflow-auto bg-transparent">
+      <div
+        className="flex-1 overflow-auto bg-transparent"
+        style={{ WebkitOverflowScrolling: "touch" }}
+      >
         {children}
       </div>
 

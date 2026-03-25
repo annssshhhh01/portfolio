@@ -38,6 +38,8 @@ body {
   position: fixed;
   inset: 0;
   touch-action: manipulation;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #root {
@@ -50,4 +52,24 @@ body {
 
 .font-script {
   font-family: "Dancing Script", cursive;
+}
+
+/* iOS momentum scrolling for scrollable containers */
+.overflow-y-auto,
+.overflow-auto,
+.overflow-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile: prevent text size adjustment on orientation change */
+@media screen and (max-width: 767px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Prevent double-tap zoom on buttons and interactive elements */
+  button, a, [role="button"] {
+    touch-action: manipulation;
+  }
 }

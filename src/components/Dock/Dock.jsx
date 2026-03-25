@@ -10,6 +10,12 @@ const appItems = dockItems.filter((i) => i.type === "app");
 /** All items shown in the dock (macOS-style: full dock, magnification on hover) */
 const mainDockItems = dockItems;
 
+/** 5 key apps shown in the mobile bottom tab bar (limited to prevent overflow) */
+const MOBILE_APP_IDS = ["about", "projects", "skills", "terminal", "resume"];
+const mobileDockItems = MOBILE_APP_IDS
+  .map((id) => dockItems.find((d) => d.id === id))
+  .filter(Boolean);
+
 const MAGNIFY = 1.52;
 const MAGNIFY_RADIUS = 2.2;
 
@@ -123,29 +129,44 @@ export function Dock({ onOpenLaunchpad }) {
 
       {/* Mobile bottom tab bar - iOS style, 44px touch targets, safe area */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 flex md:hidden items-center justify-around bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-700/50"
+        className="fixed bottom-0 left-0 right-0 z-50 flex md:hidden items-end justify-around bg-black/50 backdrop-blur-2xl border-t border-white/15"
         style={{
-          paddingBottom: "max(0.5rem, env(safe-area-inset-bottom))",
+          paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
           paddingLeft: "env(safe-area-inset-left)",
           paddingRight: "env(safe-area-inset-right)",
         }}
       >
-        {appItems.map((item) => (
-          <button
-            key={item.id}
-            type="button"
-            onClick={() => handleDockClick(item)}
-            className={`flex flex-col items-center justify-center gap-0.5 min-h-[44px] min-w-[44px] p-2 rounded-xl flex-1 max-w-[80px] ${isOpen(item.id) ? "bg-blue-500/20 text-blue-600 dark:text-blue-400" : "text-gray-600 dark:text-gray-400"
-              }`}
-          >
-            {item.iconImage ? (
-              <img src={item.iconImage} alt="" className="w-7 h-7 object-contain flex-shrink-0" />
-            ) : (
-              <span className="text-2xl">{item.icon}</span>
-            )}
-            <span className="text-[10px] sm:text-xs font-medium truncate w-full text-center">{item.title}</span>
-          </button>
-        ))}
+        {mobileDockItems.map((item) => {
+          const active = item.type === "app" && isOpen(item.id);
+          return (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => handleDockClick(item)}
+              className="flex flex-col items-center justify-center gap-1 pt-2 pb-0.5 flex-1 min-h-[44px] relative"
+              style={{ WebkitTapHighlightColor: "transparent" }}
+            >
+              {item.iconImage ? (
+                <img
+                  src={item.iconImage}
+                  alt=""
+                  className={`w-8 h-8 object-contain flex-shrink-0 transition-all duration-150 ${active ? "scale-110" : "opacity-80"}`}
+                />
+              ) : (
+                <span className={`text-2xl leading-none transition-all duration-150 ${active ? "scale-110" : "opacity-80"}`}>
+                  {item.icon}
+                </span>
+              )}
+              <span className={`text-[10px] font-medium truncate w-full text-center transition-colors duration-150 ${active ? "text-blue-400" : "text-white/50"}`}>
+                {item.title}
+              </span>
+              {/* Active dot indicator */}
+              {active && (
+                <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-400" />
+              )}
+            </button>
+          );
+        })}
       </div>
     </>
   );
