@@ -129,35 +129,35 @@ export function Dock({ onOpenLaunchpad }) {
 
       {/* Mobile bottom tab bar - iOS style, 44px touch targets, safe area */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-50 flex md:hidden items-end justify-around bg-black/50 backdrop-blur-2xl border-t border-white/15"
+        className="fixed bottom-0 left-0 right-0 z-50 flex md:hidden items-end justify-around bg-black/50 backdrop-blur-2xl border-t border-white/15 overflow-x-auto no-scrollbar"
         style={{
           paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
           paddingLeft: "env(safe-area-inset-left)",
           paddingRight: "env(safe-area-inset-right)",
         }}
       >
-        {mobileDockItems.map((item) => {
+        {appItems.map((item) => {
           const active = item.type === "app" && isOpen(item.id);
           return (
             <button
               key={item.id}
               type="button"
               onClick={() => handleDockClick(item)}
-              className="flex flex-col items-center justify-center gap-1 pt-2 pb-0.5 flex-1 min-h-[44px] relative"
+              className="flex flex-col items-center justify-center gap-1 pt-2 pb-0.5 min-w-[64px] flex-1 min-h-[44px] relative"
               style={{ WebkitTapHighlightColor: "transparent" }}
             >
               {item.iconImage ? (
                 <img
                   src={item.iconImage}
                   alt=""
-                  className={`w-8 h-8 object-contain flex-shrink-0 transition-all duration-150 ${active ? "scale-110" : "opacity-80"}`}
+                  className={`w-7 h-7 object-contain flex-shrink-0 transition-all duration-150 ${active ? "scale-110" : "opacity-80"}`}
                 />
               ) : (
-                <span className={`text-2xl leading-none transition-all duration-150 ${active ? "scale-110" : "opacity-80"}`}>
+                <span className={`text-xl leading-none transition-all duration-150 ${active ? "scale-110" : "opacity-80"}`}>
                   {item.icon}
                 </span>
               )}
-              <span className={`text-[10px] font-medium truncate w-full text-center transition-colors duration-150 ${active ? "text-blue-400" : "text-white/50"}`}>
+              <span className={`text-[9px] font-medium truncate w-full text-center transition-colors duration-150 ${active ? "text-blue-400" : "text-white/50"}`}>
                 {item.title}
               </span>
               {/* Active dot indicator */}

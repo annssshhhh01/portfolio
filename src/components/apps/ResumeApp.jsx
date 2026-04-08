@@ -173,9 +173,9 @@ export function ResumeApp() {
                   <span className="text-sm text-purple-300 font-semibold bg-purple-500/20 px-2 py-0.5 rounded border border-purple-500/20">June 2025 – August 2025</span>
                 </div>
                 <ul className="space-y-3 text-gray-300 text-sm sm:text-base leading-relaxed">
-                  <li className="flex gap-3"><span className="text-purple-400 mt-1">✦</span><span><strong>Logic Optimization:</strong> Engineered high-level State Machine logic for automated production systems, reducing computational overhead and enhancing operational reliability by 15%.</span></li>
-                  <li className="flex gap-3"><span className="text-purple-400 mt-1">✦</span><span><strong>System Orchestration:</strong> Implemented modular low-latency logic frameworks to ensure fault-tolerant performance.</span></li>
-                  <li className="flex gap-3"><span className="text-purple-400 mt-1">✦</span><span><strong>Quality Assurance:</strong> Directed unit testing and algorithmic debugging to identify critical system bottlenecks.</span></li>
+                  <li className="flex gap-3"><span className="text-purple-400 mt-1">✦</span><span><strong>PLC Optimization:</strong> Analyzed and optimized PLC control logic by identifying redundant operations, improving program readability and reducing maintenance complexity in industrial workflows.</span></li>
+                  <li className="flex gap-3"><span className="text-purple-400 mt-1">✦</span><span><strong>State Machine Design:</strong> Applied State Machine design patterns to understand and improve sequential control logic in SCADA-based industrial automation workflows.</span></li>
+                  <li className="flex gap-3"><span className="text-purple-400 mt-1">✦</span><span><strong>Modular Restructuring:</strong> Proposed modular restructuring of existing Ladder Logic programs, making them easier for the team to test and debug independently.</span></li>
                 </ul>
               </div>
             </div>
@@ -200,11 +200,13 @@ export function ResumeApp() {
                       <a href="https://www.linkedout.co.in/" target="_blank" className="text-gray-300 hover:text-blue-400 transition">Demo ↗</a>
                     </div>
                   </div>
-                  <p className="text-xs font-mono text-blue-300 mb-4 bg-black/30 border border-blue-500/20 inline-block px-2 py-1 rounded">FastAPI, LangGraph, AWS (EC2/S3), PostgreSQL, Playwright</p>
+                  <p className="text-xs font-mono text-blue-300 mb-4 bg-black/30 border border-blue-500/20 inline-block px-2 py-1 rounded">FastAPI, LangGraph, Groq API, AWS (EC2/S3), PostgreSQL (pgvector), Redis, Playwright, Docker</p>
                   <ul className="space-y-2 text-gray-300 text-sm leading-relaxed">
-                    <li>• Engineered stateful LangGraph workflow on AWS EC2; reduced manual networking by 97%.</li>
-                    <li>• Built context-aware RAG outreach using pgvector for cosine similarity.</li>
-                    <li>• Decoupled browser automation via FastAPI ThreadPoolExecutor & Redis-backed WebSockets.</li>
+                    <li>• Built a multi-agent automation system using LangGraph that fully automated LinkedIn outreach for 100+ profiles per day, reducing manual effort by ~90% through concurrent async execution.</li>
+                    <li>• Designed a RAG pipeline using pgvector cosine similarity search over parsed resume data, generating personalized connection notes.</li>
+                    <li>• Developed a Playwright-based stealth automation layer that successfully bypassed bot detection.</li>
+                    <li>• Built a real-time log streaming system using Redis-backed WebSockets, delivering live automation status updates.</li>
+                    <li>• Engineered an async FastAPI backend with ThreadPoolExecutor to isolate browser tasks from the main event loop.</li>
                   </ul>
                 </div>
 
@@ -218,11 +220,11 @@ export function ResumeApp() {
                       <a href="https://github.com/annssshhhh01/RAG-application" target="_blank" className="text-gray-300 hover:text-purple-400 transition">GitHub ↗</a>
                     </div>
                   </div>
-                  <p className="text-xs font-mono text-purple-300 mb-4 bg-black/30 border border-purple-500/20 inline-block px-2 py-1 rounded">FastAPI, React, Groq API, Llama 3.2, LangGraph, FAISS</p>
+                  <p className="text-xs font-mono text-purple-300 mb-4 bg-black/30 border border-purple-500/20 inline-block px-2 py-1 rounded">FastAPI, React, Groq API, Llama 3.2, LangGraph, FAISS, Sentence Transformers</p>
                   <ul className="space-y-2 text-gray-300 text-sm leading-relaxed">
-                    <li>• Production-ready RAG querying 500+ pages of documentation with sub-second response times.</li>
-                    <li>• Implemented Recursive Character Splitting increasing context precision by 30%.</li>
-                    <li>• Leveraged LangGraph nodes for autonomous "Self-Correction" loops.</li>
+                    <li>• Built a RAG pipeline indexing over 500 pages into FAISS using Sentence Transformer embeddings, serving answers via Groq-accelerated Llama 3.2 with under 1s response time.</li>
+                    <li>• Implemented Semantic Chunking and Recursive Character Splitting strategies, noticeably improving retrieval relevance over fixed-size chunking.</li>
+                    <li>• Designed LangGraph self-correcting agentic loops that validate retrieved context before passing it to the LLM, reducing hallucinated or off-topic answers.</li>
                   </ul>
                 </div>
 
@@ -233,10 +235,10 @@ export function ResumeApp() {
                       AI Food Nutrition Analyzer <span className="text-gray-400 text-sm font-normal">— Full-Stack App</span>
                     </h3>
                   </div>
-                  <p className="text-xs font-mono text-green-300 mb-4 bg-black/30 border border-green-500/20 inline-block px-2 py-1 rounded">Flask, PyTorch (EfficientNet), React</p>
+                  <p className="text-xs font-mono text-green-300 mb-4 bg-black/30 border border-green-500/20 inline-block px-2 py-1 rounded">React, Python, Flask, PyTorch (EfficientNet-B3), Edamam API, Recharts</p>
                   <ul className="space-y-2 text-gray-300 text-sm leading-relaxed">
-                    <li>• Backend serving custom-trained PyTorch model for real-time image classification.</li>
-                    <li>• Implemented hybrid data pipeline with JSON-based caching to minimize latency.</li>
+                    <li>• Trained a custom EfficientNet-B3 image classifier using PyTorch transfer learning and deployed it via a Flask REST API for real-time food recognition.</li>
+                    <li>• Built a JSON-based caching layer for Edamam API responses, eliminating redundant network calls and reducing average response time by 40%.</li>
                   </ul>
                 </div>
 
@@ -252,10 +254,10 @@ export function ResumeApp() {
                   <Code className="text-orange-400 w-5 h-5" /> Arsenal
                 </h2>
                 <div className="space-y-3 text-sm">
-                  <div><span className="font-semibold text-white">Languages:</span> <span className="text-gray-400">C++, SQL, Python, JS</span></div>
-                  <div><span className="font-semibold text-white">Frameworks:</span> <span className="text-gray-400">FastAPI, React, Next.js, LangGraph</span></div>
-                  <div><span className="font-semibold text-white">Databases:</span> <span className="text-gray-400">PostgreSQL, pgvector, FAISS</span></div>
-                  <div><span className="font-semibold text-white">Cloud:</span> <span className="text-gray-400">AWS (EC2, S3), Docker, CI/CD</span></div>
+                  <div><span className="font-semibold text-white">Languages:</span> <span className="text-gray-400">Python, C++, JavaScript, SQL</span></div>
+                  <div><span className="font-semibold text-white">Backend & AI:</span> <span className="text-gray-400">FastAPI, Flask, LangGraph, LLMs, PyTorch</span></div>
+                  <div><span className="font-semibold text-white">Databases:</span> <span className="text-gray-400">PostgreSQL, pgvector, FAISS, Redis</span></div>
+                  <div><span className="font-semibold text-white">Cloud & Tools:</span> <span className="text-gray-400">AWS (EC2, S3), Docker, GitHub Actions, Playwright</span></div>
                 </div>
               </div>
 
@@ -265,9 +267,9 @@ export function ResumeApp() {
                   <Award className="text-yellow-400 w-5 h-5" /> Achievements
                 </h2>
                 <ul className="space-y-3 text-sm text-gray-300">
-                  <li className="flex gap-2"><span className="text-yellow-400">🏆</span> Global Rank 4,000 in LeetCode Biweekly.</li>
-                  <li className="flex gap-2"><span className="text-yellow-400">🎯</span> 400+ problems solved on LeetCode/GFG/Ninjas.</li>
-                  <li className="flex gap-2"><span className="text-yellow-400">🎤</span> Core Member, LADC Club (Debating Society).</li>
+                  <li className="flex gap-2"><span className="text-yellow-400">🏆</span> Secured a global rank of 4,000 in a LeetCode Biweekly Contest.</li>
+                  <li className="flex gap-2"><span className="text-yellow-400">🎯</span> Solved 200+ DSA problems across LeetCode, Coding Ninjas, and GeeksforGeeks.</li>
+                  <li className="flex gap-2"><span className="text-yellow-400">🎤</span> Core Member of LADC Debating Society. Developed critical thinking and communication skills.</li>
                 </ul>
               </div>
 

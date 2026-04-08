@@ -237,8 +237,8 @@ export function Desktop() {
 
       {/* Welcome text removed as requested */}
 
-      {/* Right Vertical Glassy Icons Stack — desktop only */}
-      <div className="absolute top-1/2 right-6 sm:right-8 -translate-y-1/2 hidden md:flex flex-col gap-4 scale-[0.80] origin-right z-10">
+      {/* Right Vertical Glassy Icons Stack */}
+      <div className="absolute top-1/2 right-6 sm:right-8 -translate-y-1/2 flex flex-col gap-4 scale-[0.80] origin-right z-10">
         {desktopItems.map((item) => (
           <DesktopIcon
             key={item.id}
@@ -249,48 +249,6 @@ export function Desktop() {
           />
         ))}
       </div>
-
-      {/* Mobile App Card Grid — visible only on phones, hidden on desktop */}
-      {isMobile && (
-        <div className="absolute inset-0 flex flex-col justify-center items-center z-10 px-5 pb-28 pt-14">
-          <div className="w-full max-w-sm">
-            {/* Name & tagline */}
-            <div className="text-center mb-8">
-              <h1 className="text-white text-2xl font-bold tracking-tight drop-shadow-lg">
-                Ansh Sharma
-              </h1>
-              <p className="text-white/60 text-sm mt-1 tracking-wide">
-                Full Stack · AI Engineer
-              </p>
-            </div>
-
-            {/* 2-column card grid */}
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { id: "about", label: "About Me", emoji: "👤", appId: "about" },
-                { id: "projects", label: "Projects", emoji: "📂", appId: "projects" },
-                { id: "skills", label: "Skills", emoji: "⚡", appId: "skills" },
-                { id: "contact", label: "Contact", emoji: "✉️", appId: "contact" },
-                { id: "resume", label: "Resume", emoji: "📄", appId: "resume" },
-                { id: "terminal", label: "Terminal", emoji: "💻", appId: "terminal" },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={() => openApp(item.appId)}
-                  className="flex flex-col items-center justify-center gap-2 py-5 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/15 active:scale-95 transition-transform duration-150 shadow-lg"
-                  style={{ WebkitTapHighlightColor: "transparent" }}
-                >
-                  <span className="text-3xl leading-none">{item.emoji}</span>
-                  <span className="text-white text-[13px] font-medium tracking-wide">
-                    {item.label}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
 
       <WindowManager />
     </div>
