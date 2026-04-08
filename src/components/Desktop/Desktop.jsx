@@ -235,10 +235,8 @@ export function Desktop() {
         <div className="absolute inset-0 bg-black" />
       ) : null}
 
-      {/* Welcome text removed as requested */}
-
-      {/* Right Vertical Glassy Icons Stack - Hidden on mobile */}
-      <div className="absolute top-1/2 right-6 sm:right-8 -translate-y-1/2 hidden sm:flex flex-col gap-4 scale-[0.80] origin-right z-10">
+      {/* Right Vertical Glassy Icons Stack */}
+      <div className="absolute top-[80px] sm:top-1/2 right-4 sm:right-8 sm:-translate-y-1/2 flex flex-col gap-5 sm:gap-4 scale-[0.85] sm:scale-[0.80] origin-top-right sm:origin-right z-10">
         {desktopItems.map((item) => (
           <DesktopIcon
             key={item.id}

@@ -33,9 +33,9 @@ export function Launchpad({ isOpen, onClose, onSelectApp }) {
 
   return (
     <div
-      className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-2xl flex items-start sm:items-center justify-center p-4 sm:p-6 md:p-12 pt-20 sm:pt-6 overflow-y-auto"
+      className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-2xl flex flex-col items-center p-4 sm:p-6 md:p-12 overflow-y-auto"
       style={{
-        paddingTop: "max(5rem, env(safe-area-inset-top))",
+        paddingTop: "max(1rem, env(safe-area-inset-top))",
         paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
         paddingLeft: "max(1rem, env(safe-area-inset-left))",
         paddingRight: "max(1rem, env(safe-area-inset-right))",
@@ -46,7 +46,20 @@ export function Launchpad({ isOpen, onClose, onSelectApp }) {
       role="dialog"
       aria-label="Launchpad"
     >
-      <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 gap-x-2 gap-y-6 sm:gap-6 md:gap-8 w-full max-w-4xl">
+      {/* Mobile Cancel Button at Top */}
+      <div className="w-full max-w-4xl flex justify-end mb-6 sm:hidden mt-2 px-2">
+        <button 
+          onClick={onClose}
+          className="flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 active:bg-white/30 transition-colors text-white text-sm font-medium border border-white/10 backdrop-blur-sm"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+          Cancel
+        </button>
+      </div>
+
+      <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 gap-x-2 gap-y-6 sm:gap-6 md:gap-8 w-full max-w-4xl mt-4 sm:mt-12 flex-1 place-content-start sm:place-content-center">
         {launchpadApps.map((item) => (
           <button
             key={item.id}
