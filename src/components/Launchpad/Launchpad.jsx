@@ -33,9 +33,9 @@ export function Launchpad({ isOpen, onClose, onSelectApp }) {
 
   return (
     <div
-      className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6 md:p-12"
+      className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-2xl flex items-start sm:items-center justify-center p-4 sm:p-6 md:p-12 pt-20 sm:pt-6 overflow-y-auto"
       style={{
-        paddingTop: "max(1rem, env(safe-area-inset-top))",
+        paddingTop: "max(5rem, env(safe-area-inset-top))",
         paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
         paddingLeft: "max(1rem, env(safe-area-inset-left))",
         paddingRight: "max(1rem, env(safe-area-inset-right))",
@@ -46,7 +46,7 @@ export function Launchpad({ isOpen, onClose, onSelectApp }) {
       role="dialog"
       aria-label="Launchpad"
     >
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8 w-full max-w-4xl">
+      <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 gap-x-2 gap-y-6 sm:gap-6 md:gap-8 w-full max-w-4xl">
         {launchpadApps.map((item) => (
           <button
             key={item.id}

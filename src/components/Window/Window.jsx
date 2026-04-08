@@ -189,20 +189,33 @@ export function Window({
         ref={dragTriggerRef}
         className="flex items-center justify-between px-3 py-2.5 min-h-[36px] bg-white/[0.05] border-b border-white/[0.07] cursor-grab active:cursor-grabbing select-none"
       >
-        <TrafficLights
-          onClose={handleClose}
-          onMinimize={handleMinimize}
-          onMaximize={handleMaximize}
-        />
-        <h2 className="absolute left-1/2 -translate-x-1/2 text-sm font-medium text-white/80 pointer-events-none max-w-[45%] truncate">
+        {/* On desktop show traffic lights, on mobile show a back button */}
+        {!isMobile && (
+          <TrafficLights
+            onClose={handleClose}
+            onMinimize={handleMinimize}
+            onMaximize={handleMaximize}
+          />
+        )}
+        {isMobile && (
+          <button
+            onClick={handleClose}
+            className="flex items-center justify-center pl-1 pr-2 py-1 rounded-md text-blue-400 active:opacity-60 transition-opacity"
+            aria-label="Back"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mr-0.5">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            <span className="text-[17px] font-medium leading-none">Back</span>
+          </button>
+        )}
+
+        <h2 className={`absolute left-1/2 -translate-x-1/2 font-medium text-white/80 pointer-events-none max-w-[45%] truncate ${isMobile ? 'text-base font-semibold' : 'text-sm'}`}>
           {title}
         </h2>
-        {fullScreen && (
-          <span className="text-[10px] text-white/40 bg-white/5 px-2 py-0.5 rounded border border-white/10 font-medium tracking-wide select-none whitespace-nowrap">
-            {isMobile ? "Tap ✕ to close" : "ESC to close"}
-          </span>
-        )}
-        {!fullScreen && <div className="w-16" />}
+        
+        {/* Spacer to balance the header when maxed */}
+        <div className="w-16" />
       </div>
 
       <div
