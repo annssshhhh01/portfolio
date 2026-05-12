@@ -12,6 +12,17 @@ export const projects = [
     category: "Fullstack",
   },
   {
+    id: "cargonova",
+    title: "CargoNova AI",
+    description: "End-to-end AI shipment validation pipeline. Extracts 8 key fields from shipping PDFs via Llama 3, cross-validates with fuzzy matching, and triggers human-in-the-loop approval emails via Gmail SMTP.",
+    techStack: ["LangGraph", "Groq Llama 3", "FastAPI", "SQLite", "Watchdog", "Gmail SMTP"],
+    image: "/files/cargonova_cover.png",
+    liveUrl: "#",
+    githubUrl: "https://github.com/annssshhhh01/CargoNovaAI",
+    featured: true,
+    category: "AI",
+  },
+  {
     id: "rag-engine",
     title: "Autonomous Agentic RAG Engine",
     description: "Production-ready RAG pipeline to query 500+ pages of documentation with sub-second response times. Implemented Semantic Chunking and self-correction loops to minimize hallucination rates.",
